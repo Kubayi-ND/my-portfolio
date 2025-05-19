@@ -1,27 +1,56 @@
-
 import React from 'react';
 import SectionHeading from './SectionHeading';
+import { useRef, useState } from "react";
 import { Card, CardContent } from '@/components/ui/card';
-import { User } from 'lucide-react';
+import { BackgroundBeams } from '@/components/ui/background-beams';
 
-const AboutSection: React.FC = () => {
+function AboutSection() {
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [transformStyle, setTransformStyle] = useState("");
+   const handleMouseMove = (e: React.MouseEvent) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * 20;
+    const rotateY = ((x - centerX) / centerX) * -20;
+
+    setTransformStyle(
+      `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+    );
+  };
+
+  const handleMouseLeave = () => {
+    setTransformStyle("perspective(600px) rotateX(0deg) rotateY(0deg)");
+  };
   return (
-    <section id="about" className="section-container bg-secondary/10  pt-16">
-      <div className="container mx-auto">
+    <section id="about" className="section-container relative overflow-hidden pt-16">
+      <div className="container relative z-10 mx-auto">
         <SectionHeading 
           title="About Ntsumi Kubayi" 
           subtitle="Learn more about my background and passion for software development"
         />
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center z-10">
           <div 
             className="relative rounded-[30px] overflow-hidden aspect-square max-w-md mx-auto lg:mx-0 opacity-0 animate-fade-in"
             style={{animationDelay: '100ms'}}
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-blue-500/30 mix-blend-overlay"></div>
-            <div className="w-full h-full flex items-center justify-center bg-secondary">
-              <img  src="/profile.jpg" alt="Ntsumi Kubayi" />
-              <span className="sr-only">Developer Profile Image</span>
+            
+            <div 
+               ref={containerRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{ transform: transformStyle }}
+              className="relative w-full h-full flex items-center justify-center bg-secondary">
+                
+               <img  src="/profile.jpg" alt="Ntsumi Kubayi" className='rounded-[30px]'/>
+               <span className="sr-only">Developer Profile Image</span>
             </div>
           </div>
           
@@ -55,6 +84,7 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
       </div>
+      <BackgroundBeams className='z-0'/>
     </section>
   );
 };

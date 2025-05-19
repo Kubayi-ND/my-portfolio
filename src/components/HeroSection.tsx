@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
-import { InteractiveRobotSpline } from './interactive-3d-robot';
+import { InteractiveRobotSpline } from './ui/interactive-3d-robot';
 
 const HeroSection: React.FC = () => {
   // Use a real Spline scene URL

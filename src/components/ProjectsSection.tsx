@@ -10,8 +10,8 @@ const ProjectsSection: React.FC = () => {
   const projects: ProjectProps[] = [
      {
       title: 'Portfolio Website',
-      description: 'A responsive developer portfolio website built with modern web technologies.',
-      image: "#",
+      description: 'A responsive developer portfolio website built with modern web technologies. It feattures an interactive UI and smooth animations.',
+      image: "portfolio.gif",
       technologies: ['TypeScript', 'Vite', 'Tailwind CSS'],
       githubUrl: '#',
       liveUrl: '#',
@@ -26,41 +26,7 @@ const ProjectsSection: React.FC = () => {
       liveUrl: 'https://kubayi-nd.github.io/QRCodeGenerator/',
       type: 'web',
     },
-    {
-      title: 'Task Management App',
-      description: 'A collaborative task management platform with real-time updates and team collaboration features.',
-      image: "#",
-      technologies: ['React', 'Firebase', 'Tailwind CSS', 'Redux'],
-      githubUrl: '#',
-      liveUrl: '#',
-      type: 'web',
-    },
-   
-    {
-      title: 'File Management Tool',
-      description: 'A desktop application for organizing, tagging, and searching files with advanced categorization.',
-      image: "#",
-      technologies: ['C#', '.NET', 'SQLite', 'WPF'],
-      githubUrl: '#',
-      type: 'desktop',
-    },
-    {
-      title: 'Code Editor',
-      description: 'A lightweight code editor with syntax highlighting and integrated terminal.',
-      image: "#",
-      technologies: ['Electron', 'TypeScript', 'CodeMirror', 'Node.js'],
-      githubUrl: '#',
-      liveUrl: '#',
-      type: 'desktop',
-    },
-    {
-      title: 'Data Visualization Tool',
-      description: 'A desktop application for creating interactive charts and graphs from various data sources.',
-      image: "#",
-      technologies: ['Python', 'PyQt', 'Matplotlib', 'Pandas'],
-      githubUrl: '#',
-      type: 'desktop',
-    },
+    
   ];
 
   const webProjects = projects.filter(project => project.type === 'web');
