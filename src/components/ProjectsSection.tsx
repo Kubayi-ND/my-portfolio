@@ -10,16 +10,16 @@ const ProjectsSection: React.FC = () => {
   const projects: ProjectProps[] = [
      {
       title: 'Portfolio Website',
-      description: 'A responsive developer portfolio website built with modern web technologies. It feattures an interactive UI and smooth animations.',
+      description: 'A responsive developer portfolio website built with modern web technologies and hosted in Vercel. It feattures an interactive UI and smooth animations.',
       image: "portfolio.gif",
       technologies: ['TypeScript', 'Vite', 'Tailwind CSS'],
-      githubUrl: '#',
-      liveUrl: '#',
+      githubUrl: 'https://github.com/Kubayi-ND/ntsumis-portfolio',
+      liveUrl: 'https://ntsumis-portfolio.vercel.app',
       type: 'web',
     },
     {
       title: 'Mobile QR Code Generator',
-      description: 'Makes use of node.js to create a 2D Qr Code for the URL inserted in the TextBox, when "Generato Qr Code" button is click. The download button uses html2canvas to create an image when pressed.',
+      description: 'Makes use of node.js to create a 2D Qr Code for the URL inserted in the TextBox, when "Generato Qr Code" button is click. The download button uses html2canvas to create an image when pressed.This project is hosted in GitHub Pages.',
       image: "QrCode.gif",
       technologies: ['JavaScript', 'HTML5', 'CSS3', 'Bootstrap5'],
       githubUrl: 'https://github.com/Kubayi-ND/QRCodeGenerator',
