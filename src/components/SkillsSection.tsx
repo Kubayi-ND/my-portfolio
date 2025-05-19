@@ -202,7 +202,7 @@ const SkillsSection: React.FC = () => {
                 {categories[category as keyof typeof categories]}
               </h3>
               
-              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 gap-6 h-24">
+              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-6 gap-6 h-auto">
                 {skills.map((skill, index) => (
                   <div 
                     key={skill.name}
