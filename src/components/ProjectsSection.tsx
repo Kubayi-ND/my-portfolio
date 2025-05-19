@@ -1,0 +1,120 @@
+
+import React, { useState } from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import SectionHeading from './SectionHeading';
+import ProjectCard, { ProjectProps } from './ProjectCard';
+import { Code, Computer } from 'lucide-react';
+
+
+const ProjectsSection: React.FC = () => {
+  const projects: ProjectProps[] = [
+     {
+      title: 'Portfolio Website',
+      description: 'A responsive developer portfolio website built with modern web technologies.',
+      image: "#",
+      technologies: ['TypeScript', 'Vite', 'Tailwind CSS'],
+      githubUrl: '#',
+      liveUrl: '#',
+      type: 'web',
+    },
+    {
+      title: 'Mobile QR Code Generator',
+      description: 'Makes use of node.js to create a 2D Qr Code for the URL inserted in the TextBox, when "Generato Qr Code" button is click. The download button uses html2canvas to create an image when pressed.',
+      image: "QrCode.gif",
+      technologies: ['JavaScript', 'HTML5', 'CSS3', 'Bootstrap5'],
+      githubUrl: 'https://github.com/Kubayi-ND/QRCodeGenerator',
+      liveUrl: 'https://kubayi-nd.github.io/QRCodeGenerator/',
+      type: 'web',
+    },
+    {
+      title: 'Task Management App',
+      description: 'A collaborative task management platform with real-time updates and team collaboration features.',
+      image: "#",
+      technologies: ['React', 'Firebase', 'Tailwind CSS', 'Redux'],
+      githubUrl: '#',
+      liveUrl: '#',
+      type: 'web',
+    },
+   
+    {
+      title: 'File Management Tool',
+      description: 'A desktop application for organizing, tagging, and searching files with advanced categorization.',
+      image: "#",
+      technologies: ['C#', '.NET', 'SQLite', 'WPF'],
+      githubUrl: '#',
+      type: 'desktop',
+    },
+    {
+      title: 'Code Editor',
+      description: 'A lightweight code editor with syntax highlighting and integrated terminal.',
+      image: "#",
+      technologies: ['Electron', 'TypeScript', 'CodeMirror', 'Node.js'],
+      githubUrl: '#',
+      liveUrl: '#',
+      type: 'desktop',
+    },
+    {
+      title: 'Data Visualization Tool',
+      description: 'A desktop application for creating interactive charts and graphs from various data sources.',
+      image: "#",
+      technologies: ['Python', 'PyQt', 'Matplotlib', 'Pandas'],
+      githubUrl: '#',
+      type: 'desktop',
+    },
+  ];
+
+  const webProjects = projects.filter(project => project.type === 'web');
+  const desktopProjects = projects.filter(project => project.type === 'desktop');
+
+  return (
+    <section id="projects" className="section-container bg-secondary/10 pt-16">
+      <div className="container mx-auto">
+        <SectionHeading 
+          title="My Projects" 
+          subtitle="Showcasing my best work in web and desktop application development"
+        />
+        
+        <Tabs defaultValue="web" className="w-full opacity-0 animate-fade-in">
+          <TabsList className="grid grid-cols-2 w-full max-w-md mx-auto mb-8">
+            <TabsTrigger value="web" className="flex items-center gap-2">
+              <Code className="h-4 w-4" /> Web Apps
+            </TabsTrigger>
+            <TabsTrigger value="desktop" className="flex items-center gap-2">
+              <Computer className="h-4 w-4" /> Desktop Apps
+            </TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="web" className="mt-0 focus-visible:outline-ring-0 focus-visible:ring-0 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+              {webProjects.map((project, index) => (
+                <div 
+                  key={project.title} 
+                  className="opacity-0 animate-scale-up shadow-md shadow-primary/20"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="desktop" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {desktopProjects.map((project, index) => (
+                <div 
+                  key={project.title} 
+                  className="opacity-0 animate-scale-up shadow-md shadow-primary/20"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
+      </div>
+    </section>
+  );
+};
+
+export default ProjectsSection;
