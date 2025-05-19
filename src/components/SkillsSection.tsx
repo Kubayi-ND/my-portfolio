@@ -65,6 +65,11 @@ const SkillsSection: React.FC = () => {
       <StackIcon name="nodejs" />
     </div>
   );
+  const SQL: React.FC<{ className?: string }> = ({ className }) => (
+    <div className={className}>
+      <img src="/sql.png" alt="SQL" className="h-14 w-14" />
+    </div>
+  );
   const Supabase: React.FC<{ className?: string }> = ({ className }) => (
     <div className={className}>
       <StackIcon name="supabase" />
@@ -73,6 +78,11 @@ const SkillsSection: React.FC = () => {
   const Postgresql: React.FC<{ className?: string }> = ({ className }) => (
     <div className={className}>
       <StackIcon name="postgresql" />
+    </div>
+  );
+  const SQLServer: React.FC<{ className?: string }> = ({ className }) => (
+    <div className={className}>
+      <img src="/sqlserver.png" alt="SQL Server" className="h-full w-full" />
     </div>
   );
   const Auth: React.FC<{ className?: string }> = ({ className }) => (
@@ -91,11 +101,7 @@ const SkillsSection: React.FC = () => {
       <StackIcon name="js" />
     </div>
   );
-  const Typescript: React.FC<{ className?: string }> = ({ className }) => (
-    <div className={className}>
-      <StackIcon name="typescript" />
-    </div>
-  );
+  
   const Git: React.FC<{ className?: string }> = ({ className }) => (
     <div className={className}>
       <StackIcon name="git" />
@@ -111,9 +117,19 @@ const SkillsSection: React.FC = () => {
       <StackIcon name="vscode" />
     </div>
   );
-  const Postman: React.FC<{ className?: string }> = ({ className }) => (
+  const GithubCopilot: React.FC<{ className?: string }> = ({ className }) => (
     <div className={className}>
-      <StackIcon name="postman" />
+      <StackIcon name="copilotgithub" />
+    </div>
+  );
+  const npm: React.FC<{ className?: string }> = ({ className }) => (
+    <div className={className}>
+      <StackIcon name="npm2" />
+    </div>
+  );
+  const VisualStudio: React.FC<{ className?: string }> = ({ className }) => (
+    <div className={className}>
+      <img src="/visual-studio.svg" alt="Visual Studio" className="h-10 w-10" />
     </div>
   );
 
@@ -131,23 +147,23 @@ const SkillsSection: React.FC = () => {
     // Backend
     { name: 'Node.js', icon: Node, category: 'backend' },
     { name: 'Supabase', icon: Supabase, category: 'backend' },
-    { name: 'SQL Server', icon: Server, category: 'backend' },
+    { name: 'SQL Server', icon: SQLServer, category: 'backend' },
     { name: 'PostgreSQL', icon: Postgresql, category: 'backend' },
     { name: 'Auth0', icon: Auth, category: 'backend' },
     
     //programming languages
     {name: 'C#', icon: Csharp, category: 'languages'},
     {name: 'JavaScript', icon: JavaScript, category: 'languages'},
-    { name: 'TypeScript', icon: Typescript, category: 'languages' },
-    {name: 'SQL', icon: FileJson, category: 'languages'},
+    {name: 'SQL', icon: SQL, category: 'languages'},
     
     // Tools
     { name: 'Git Version Control', icon: Git, category: 'tools' },
     { name: 'GitHub', icon: Github, category: 'tools' },
+    { name: 'Github Copilot', icon: GithubCopilot, category: 'tools' },
+    { name: 'npm', icon: npm, category: 'tools' },
     { name: 'VS Code', icon: Vscode, category: 'tools' },
-    { name: 'Supabase', icon: Supabase, category: 'tools' },
-    { name: 'SQl Server', icon: Database, category: 'tools' },
-    { name: 'Postman', icon: Postman, category: 'tools' },
+    { name: 'Visual Studio 20222', icon: VisualStudio, category: 'tools' },
+   
     
   ];
 

@@ -29,6 +29,47 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      // Close mobile menu if open
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+      
+      // Calculate header height to offset the scroll position
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      
+      // Get the target position with offset
+      const targetPosition = element.offsetTop - headerHeight - 20;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      
+      // Animate scroll with custom easing
+      const duration = 1000; // ms
+      const startTime = performance.now();
+      
+      const animateScroll = (currentTime: number) => {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        
+        // Apply easing - easeInOutCubic
+        const easeProgress = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        
+        window.scrollTo(0, startPosition + distance * easeProgress);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        }
+      };
+      
+      requestAnimationFrame(animateScroll);
+    }
+  };
   const navItems = [
     { id: 'hero', label: 'Home', icon: Home },
     { id: 'about', label: 'About', icon: User },
@@ -57,8 +98,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-          {/* Desktop Navigation */}
+        </button>        {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex items-center space-x-4 font-bold">
             {navItems.map((item) => (
@@ -66,6 +106,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
                 <a
                   href={`#${item.id}`}
                   className={`nav-item ${activeSection === item.id ? 'active' : ''} flex items-center`}
+                  onClick={(e) => handleSmoothScroll(e, item.id)}
                 >
                   <item.icon className="mr-4 h-4 w-4" />
 
@@ -84,8 +125,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
       )}>
         <nav className="container mx-auto py-5">
           <ul className="flex flex-col items-center space-y-4">
-            {navItems.map((item) => (
-              <li key={item.id} className="w-full">                <a
+            {navItems.map((item) => (              <li key={item.id} className="w-full">                <a
                   href={`#${item.id}`}
                   className={cn(
                     "block text-center py-2 text-lg font-medium transition-colors flex items-center justify-center", 
@@ -93,7 +133,7 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
                       ? "text-primary font-semibold" 
                       : "text-foreground hover:text-primary"
                   )}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => handleSmoothScroll(e, item.id)}
                 >
                   <item.icon className="mr-4 h-5 w-5" />
 
