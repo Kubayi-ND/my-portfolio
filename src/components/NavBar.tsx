@@ -1,7 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { 
+  Menu, 
+  X, 
+  Home, 
+  User, 
+  Code2, 
+  FolderKanban, 
+  MailPlus 
+} from 'lucide-react';
 
 interface NavBarProps {
   activeSection: string;
@@ -21,13 +29,12 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'hero', label: 'Home', icon: Home },
+    { id: 'about', label: 'About', icon: User },
+    { id: 'skills', label: 'Skills', icon: Code2 },
+    { id: 'projects', label: 'Projects', icon: FolderKanban },
+    { id: 'contact', label: 'Contact', icon: MailPlus },
   ];
 
   return (
@@ -51,16 +58,17 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-        
-        {/* Desktop Navigation */}
+          {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex items-center space-x-4 font-bold">
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
-                  className={`nav-item ${activeSection === item.id ? 'active' : ''}`}
+                  className={`nav-item ${activeSection === item.id ? 'active' : ''} flex items-center`}
                 >
+                  <item.icon className="mr-4 h-4 w-4" />
+
                   {item.label}
                 </a>
               </li>
@@ -77,17 +85,18 @@ const NavBar: React.FC<NavBarProps> = ({ activeSection }) => {
         <nav className="container mx-auto py-5">
           <ul className="flex flex-col items-center space-y-4">
             {navItems.map((item) => (
-              <li key={item.id} className="w-full">
-                <a
+              <li key={item.id} className="w-full">                <a
                   href={`#${item.id}`}
                   className={cn(
-                    "block text-center py-2 text-lg font-medium transition-colors", 
+                    "block text-center py-2 text-lg font-medium transition-colors flex items-center justify-center", 
                     activeSection === item.id 
                       ? "text-primary font-semibold" 
                       : "text-foreground hover:text-primary"
                   )}
                   onClick={() => setIsMenuOpen(false)}
                 >
+                  <item.icon className="mr-4 h-5 w-5" />
+
                   {item.label}
                 </a>
               </li>
