@@ -12,9 +12,18 @@ const ProjectsSection: React.FC = () => {
       title: 'Portfolio Website',
       description: 'A responsive developer portfolio website built with modern web technologies and hosted in Vercel. It feattures an interactive UI and smooth animations.',
       image: "portfolio.gif",
-      technologies: ['TypeScript', 'Vite', 'Tailwind CSS'],
+      technologies: ['Vite', 'TypeScript', 'Tailwind CSS'],
       githubUrl: 'https://github.com/Kubayi-ND/ntsumis-portfolio',
       liveUrl: 'https://ntsumis-portfolio.vercel.app',
+      type: 'web',
+    },
+    {
+      title: 'AnimeVerse',
+      description: 'AnimeVerse is a web application that allows users to search for anime. The results feature a synopsis, trailers, rating among few other anime related information. It provides a user-friendly interface and utilizes the Jikan API to fetch data.',
+      image: "animeverse.gif",
+      technologies: ['Next.jst', 'JavaScrip', 'Tailwind CSS', 'REST API'],
+      githubUrl: 'https://github.com/Kubayi-ND/animesearch',
+      liveUrl: 'https://animeverse-sand.vercel.app/',
       type: 'web',
     },
     {
@@ -26,6 +35,16 @@ const ProjectsSection: React.FC = () => {
       liveUrl: 'https://kubayi-nd.github.io/QRCodeGenerator/',
       type: 'web',
     },
+
+    {
+      title: 'Calculator',
+      description: 'A simple calculator application built with Html and Css. It supports basic arithmetic operations with the use of JavaScript eval function.',
+      image: "calculator.gif",
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      githubUrl: 'https://github.com/Kubayi-ND/Calculator',
+      liveUrl: 'https://kubayi-nd.github.io/Calculator/',
+      type: 'web',
+    }
     
   ];
 
