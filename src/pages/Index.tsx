@@ -57,6 +57,9 @@ const Index = () => {
           <p className="text-sm text-foreground/70">
             © {new Date().getFullYear()} Ntsumi Kubayi. All Rights Reserved.
           </p>
+          <p className="text-xs text-foreground/70">
+            powered by Vite and Vercel.
+          </p>
         </div>
       </footer>
     </div>
