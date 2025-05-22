@@ -84,6 +84,8 @@ const ProjectsSection: React.FC = () => {
           </TabsContent>
           
           <TabsContent value="desktop" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
+            <h1 className="text-center text-4xl font-bold">No Projects yet</h1>
+            <h1 className='text-center text-3xl underline'>Project still under Development...</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {desktopProjects.map((project, index) => (
                 <div 
