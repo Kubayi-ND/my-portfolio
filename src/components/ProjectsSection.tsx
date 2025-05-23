@@ -27,6 +27,15 @@ const ProjectsSection: React.FC = () => {
       type: 'web',
     },
     {
+      title: 'Finance Manager',
+      description: 'The full stack finance manager makes use of Vite Framework, RestAPI, and Supabase to create a full stack finance management application. The application will allow users to trach income and track expense records, and generate reports which can be export as an excel document. It will feature dark and light modes',
+      image: "financeManager.gif",
+      technologies: ['Vite', 'TypeScript', 'Supabase', 'REST API'],
+      githubUrl: 'https://github.com/Kubayi-ND/finance-manager',
+      liveUrl: 'https://finance-manager-c73p.vercel.app',
+      type: 'web',
+    },
+    {
       title: 'Mobile QR Code Generator',
       description: 'Makes use of node.js to create a 2D Qr Code for the URL inserted in the TextBox, when "Generato Qr Code" button is click. The download button uses html2canvas to create an image when pressed.This project is hosted in GitHub Pages.',
       image: "QrCode.gif",
@@ -54,15 +63,7 @@ const ProjectsSection: React.FC = () => {
       liveUrl: 'https://kubayi-nd.github.io/React_Clock/',
       type: 'web',
     },
-    {
-      title: 'Upcoming Full Stack Finance Manager',
-      description: 'This project Will make use of Vite Framework, RestAPI, and Supabase to create a full stack finance manager application. The application will allow users to manage their finances, track expenses, and generate reports. It will feature dark and light modes',
-      image: "financeManager.gif",
-      technologies: ['Vite', 'React.js', 'Supabase', 'REST API'],
-      githubUrl: '#',
-      liveUrl: '#',
-      type: 'web',
-    }
+    
   ];
 
   const webProjects = projects.filter(project => project.type === 'web');
