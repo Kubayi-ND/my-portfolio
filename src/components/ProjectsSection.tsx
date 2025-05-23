@@ -53,6 +53,15 @@ const ProjectsSection: React.FC = () => {
       githubUrl: 'https://github.com/Kubayi-ND/React_Clock/tree/master',
       liveUrl: 'https://kubayi-nd.github.io/React_Clock/',
       type: 'web',
+    },
+    {
+      title: 'Uncoming Full Stack Finance Manager',
+      description: 'Will make use of Vite Framework, RestAPI, and Supabase to create a full stack finance manager application. The application will allow users to manage their finances, track expenses, and generate reports.',
+      image: "financeManager.png",
+      technologies: ['Vite', 'React.js', 'Supabase', 'REST API'],
+      githubUrl: '#',
+      liveUrl: '#',
+      type: 'web',
     }
   ];
 
