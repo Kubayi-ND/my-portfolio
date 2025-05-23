@@ -55,7 +55,7 @@ const ProjectsSection: React.FC = () => {
       type: 'web',
     },
     {
-      title: 'Uncoming Full Stack Finance Manager',
+      title: 'Upcoming Full Stack Finance Manager',
       description: 'This project Will make use of Vite Framework, RestAPI, and Supabase to create a full stack finance manager application. The application will allow users to manage their finances, track expenses, and generate reports. It will feature dark and light modes',
       image: "financeManager.gif",
       technologies: ['Vite', 'React.js', 'Supabase', 'REST API'],
