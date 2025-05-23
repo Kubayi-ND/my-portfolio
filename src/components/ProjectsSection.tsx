@@ -12,7 +12,7 @@ const ProjectsSection: React.FC = () => {
       title: 'Portfolio Website',
       description: 'A responsive developer portfolio website built with modern web technologies and hosted in Vercel. It feattures an interactive UI and smooth animations.',
       image: "portfolio.gif",
-      technologies: ['Vite', 'TypeScript', 'Tailwind CSS'],
+      technologies: ['Vite', 'TypeScript', 'Tailwind CSS', 'Vercel'],
       githubUrl: 'https://github.com/Kubayi-ND/ntsumis-portfolio',
       liveUrl: 'https://ntsumis-portfolio.vercel.app',
       type: 'web',
@@ -21,7 +21,7 @@ const ProjectsSection: React.FC = () => {
       title: 'AnimeVerse',
       description: 'AnimeVerse is a web application that allows users to search for anime. The results feature a synopsis, trailers, rating among few other anime related information. It provides a user-friendly interface and utilizes the Jikan API to fetch data.',
       image: "animeverse.gif",
-      technologies: ['Next.jst', 'JavaScrip', 'Tailwind CSS', 'REST API'],
+      technologies: ['Next.jst', 'JavaScrip', 'Tailwind CSS', 'REST API', 'Vercel'],
       githubUrl: 'https://github.com/Kubayi-ND/animesearch',
       liveUrl: 'https://animeverse-sand.vercel.app/',
       type: 'web',
@@ -30,7 +30,7 @@ const ProjectsSection: React.FC = () => {
       title: 'Mobile QR Code Generator',
       description: 'Makes use of node.js to create a 2D Qr Code for the URL inserted in the TextBox, when "Generato Qr Code" button is click. The download button uses html2canvas to create an image when pressed.This project is hosted in GitHub Pages.',
       image: "QrCode.gif",
-      technologies: ['JavaScript', 'HTML5', 'CSS3', 'Bootstrap5'],
+      technologies: ['JavaScript', 'HTML5', 'CSS3', 'Bootstrap5', 'GitHub Pages'],
       githubUrl: 'https://github.com/Kubayi-ND/QRCodeGenerator',
       liveUrl: 'https://kubayi-nd.github.io/QRCodeGenerator/',
       type: 'web',
@@ -40,12 +40,20 @@ const ProjectsSection: React.FC = () => {
       title: 'Calculator',
       description: 'A simple calculator application built with Html and Css. It supports basic arithmetic operations with the use of JavaScript eval function.',
       image: "calculator.gif",
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      technologies: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
       githubUrl: 'https://github.com/Kubayi-ND/Calculator',
       liveUrl: 'https://kubayi-nd.github.io/Calculator/',
       type: 'web',
+    },
+    {
+      title: 'React Clock',
+      description: 'Makes use of javascript, setInterval function to dynamically update the time on the digital and analogue clock every second.',
+      image: "clock.gif",
+      technologies: ['JavaScript', 'React.js', 'Html5', 'Css3', 'GitHub Pages'],
+      githubUrl: 'https://github.com/Kubayi-ND/React_Clock/tree/master',
+      liveUrl: 'https://kubayi-nd.github.io/React_Clock/',
+      type: 'web',
     }
-    
   ];
 
   const webProjects = projects.filter(project => project.type === 'web');
