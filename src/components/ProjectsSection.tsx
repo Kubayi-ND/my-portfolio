@@ -8,6 +8,7 @@ import { Code, Computer } from 'lucide-react';
 
 const ProjectsSection: React.FC = () => {
   const projects: ProjectProps[] = [
+    //Website projects
      {
       title: 'Portfolio Website',
       description: 'A responsive developer portfolio website built with modern web technologies and hosted in Vercel. It feattures an interactive UI and smooth animations.',
@@ -21,7 +22,7 @@ const ProjectsSection: React.FC = () => {
       title: 'AnimeVerse',
       description: 'AnimeVerse is a web application that allows users to search for anime. The results feature a synopsis, trailers, rating among few other anime related information. It provides a user-friendly interface and utilizes the Jikan API to fetch data.',
       image: "animeverse.gif",
-      technologies: ['Next.jst', 'JavaScrip', 'Tailwind CSS', 'REST API', 'Vercel'],
+      technologies: ['Next.jst', 'JavaScript', 'Tailwind CSS', 'REST API', 'Vercel'],
       githubUrl: 'https://github.com/Kubayi-ND/animesearch',
       liveUrl: 'https://animeverse-sand.vercel.app/',
       type: 'web',
@@ -30,9 +31,18 @@ const ProjectsSection: React.FC = () => {
       title: 'Finance Manager',
       description: 'The full stack finance manager makes use of Vite Framework, RestAPI, and Supabase to create a full stack finance management application. The application will allow users to trach income and track expense records, and generate reports which can be export as an excel document. It will feature dark and light modes',
       image: "financeManager.gif",
-      technologies: ['Vite', 'TypeScript', 'Supabase', 'REST API'],
+      technologies: ['Vite', 'TypeScript', 'Supabase', 'REST API', 'Vercel'],
       githubUrl: 'https://github.com/Kubayi-ND/finance-manager',
       liveUrl: 'https://finance-manager-c73p.vercel.app',
+      type: 'web',
+    },
+    {
+      title: 'React Clock',
+      description: 'Makes use of javascript, setInterval function to dynamically update the time on the digital and analogue clock every second.',
+      image: "clock.gif",
+      technologies: ['JavaScript', 'React.js', 'Css3', 'GitHub Pages'],
+      githubUrl: 'https://github.com/Kubayi-ND/React_Clock/tree/master',
+      liveUrl: 'https://kubayi-nd.github.io/React_Clock/',
       type: 'web',
     },
     {
@@ -54,16 +64,17 @@ const ProjectsSection: React.FC = () => {
       liveUrl: 'https://kubayi-nd.github.io/Calculator/',
       type: 'web',
     },
-    {
-      title: 'React Clock',
-      description: 'Makes use of javascript, setInterval function to dynamically update the time on the digital and analogue clock every second.',
-      image: "clock.gif",
-      technologies: ['JavaScript', 'React.js', 'Html5', 'Css3', 'GitHub Pages'],
-      githubUrl: 'https://github.com/Kubayi-ND/React_Clock/tree/master',
-      liveUrl: 'https://kubayi-nd.github.io/React_Clock/',
-      type: 'web',
-    },
     
+    
+    //Desktop Apps
+    {
+      title: 'Upcoming Student Management System',
+      description: 'A desktop application built with C# and Windows Forms App(.Net Framework) for managing module marks for student. It will allows aunthenticated users to add, edit, and delete Modules and student marks for each module. It features a login system, and a dashboard for editing or viewing modules and student marks.',
+      image: "studentmanager.png",
+      technologies: ['C#', '.Net Framework forms','PostgreSQL/Supabase',],
+      githubUrl: '#',
+      liveUrl: '#',
+      type: 'desktop',}
   ];
 
   const webProjects = projects.filter(project => project.type === 'web');
@@ -102,7 +113,6 @@ const ProjectsSection: React.FC = () => {
           </TabsContent>
           
           <TabsContent value="desktop" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
-            <h1 className="text-center text-4xl font-bold">No Projects yet</h1>
             <h1 className='text-center text-3xl underline'>Project still under Development...</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {desktopProjects.map((project, index) => (

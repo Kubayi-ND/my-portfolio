@@ -27,7 +27,7 @@ const HeroSection: React.FC = () => {
           </span>
         </h1>
         {/* Typing animation and glowing effect for h2 */}
-        <h2 className="text-3xl typing-glow">
+        <h2 className="text-3xl pb-8 typing-glow">
           <TypingText typingSpeed={60} />
         </h2>
 
