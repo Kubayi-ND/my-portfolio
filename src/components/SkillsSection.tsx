@@ -101,6 +101,12 @@ const SkillsSection: React.FC = () => {
       <StackIcon name="js" />
     </div>
   );
+
+  const TypeScript: React.FC<{ className?: string }> = ({ className }) => (
+    <div className={className}>
+      <StackIcon name="typescript" />
+    </div>
+  );
   
   const Git: React.FC<{ className?: string }> = ({ className }) => (
     <div className={className}>
@@ -154,6 +160,7 @@ const SkillsSection: React.FC = () => {
     //programming languages
     {name: 'C#', icon: Csharp, category: 'languages'},
     {name: 'JavaScript', icon: JavaScript, category: 'languages'},
+    {name: 'TypeScript', icon: TypeScript, category: 'languages'},
     {name: 'SQL', icon: SQL, category: 'languages'},
     
     // Tools

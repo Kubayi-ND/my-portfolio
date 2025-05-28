@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import { TypingText } from './ui/TypingText';
 import { InteractiveRobotSpline } from './ui/interactive-3d-robot';
 
 const HeroSection: React.FC = () => {
@@ -22,9 +23,14 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto flex flex-col items-center justify-center text-center z-10 relative h-full py-20 mt-24">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 animate-fade-in">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400">
-            Graduate Software Developer
+            Ntsumi Kubayi 
           </span>
         </h1>
+        {/* Typing animation and glowing effect for h2 */}
+        <h2 className="text-3xl typing-glow">
+          <TypingText typingSpeed={60} />
+        </h2>
+
         <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-foreground/80 opacity-0 animate-fade-in animate-delay-200 font-bold">
           Building innovative solutions with modern technologies
         </p>
